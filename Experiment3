@@ -1,0 +1,35 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+class Objects{
+    String color;
+    String State;
+    static Double Radii;
+    void getData(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the color for shape");
+        color = sc.next();
+        System.out.println("Enter the State of the shape ie Active/Inactive");
+         State = sc.next();
+        System.out.println("Enter the radii of the Shape ");
+         Radii = sc.nextDouble();
+        }
+    }
+
+class Main extends Objects{
+
+      public static void main(String args[]){
+        double Pi = 3.1415;
+        Objects circle = new Objects();
+        circle.getData();
+        double circumference = 2*Pi*Radii;
+        double area = Pi*Radii*Radii; 
+        System.out.println("The area is :"+area +"and circumference is :"+ circumference);
+    }
+    
+}
