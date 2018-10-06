@@ -1,0 +1,116 @@
+/*
+NAME: Param Deshpande
+ROLL NO.: 2017110013
+BRANCH/BATCH: ETRX/A
+EMAIL ADRESS: deshpandeparam10@gmail.com
+*/
+/*
+AIM: Program on Interface 
+OBJECTIVE: Write a program that takes input for two matrices of same order n & m taken from the user and gives output as sum & difference of the two matrices & prints a matrix as an answer. Use interface enter to take the input from the user.
+*/
+import java.util.*;
+interface Enter{
+    public void addmatrix();
+    public void submatrix();
+}
+class Compute implements Enter{
+    int n,m;
+    Scanner sc = new Scanner(System.in);
+    int add[][];
+    int sub[][];
+    int sum[][];
+    int dif[][];
+   
+   void set(int N,int M){
+   n=N;
+   m=M;
+   add =new int[n][m];
+   sub =new int[n][m];
+   sum =new int[n][m];
+   dif=new int[n][m];
+}
+
+public void addmatrix(){
+    
+    System.out.println("Matrix one");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            System.out.println("Enter values");
+            add[i][j]=sc.nextInt();
+        }
+    }
+}
+public void submatrix(){
+    System.out.println("Matrix two");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            System.out.println("Enter values");
+            sub[i][j]=sc.nextInt();
+        }
+    }
+}
+void cal(){
+    System.out.println("Sum of Two Matrixs");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            sum[i][j]=add[i][j]+sub[i][j];
+            System.out.print(sum[i][j]+"\t");
+        }
+        System.out.println("");
+    }
+    System.out.println("                          ");
+    System.out.println("Difference of Two Matrixs");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            dif[i][j]=add[i][j]-sub[i][j];
+            System.out.print(dif[i][j]+"\t");
+        }
+        System.out.println("");
+    }
+}
+}
+public class Main {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter n:");
+        int n = sc.nextInt();
+        System.out.println("Enter m:");
+        int m = sc.nextInt();
+        Compute c=new Compute();
+        c.set(n,m);
+        c.addmatrix();
+        c.submatrix();
+        c.cal();
+    }
+}
+/*
+Enter n:
+2
+Enter m:
+2
+Matrix one
+Enter values
+5
+Enter values
+6
+Enter values
+23
+Enter values
+2
+Matrix two
+Enter values
+4
+Enter values
+55
+Enter values
+11
+Enter values
+22
+Sum of Two Matrixs
+9	61	
+34	24	
+                          
+Difference of Two Matrixs
+1	-49	
+12	-20	
+*/
